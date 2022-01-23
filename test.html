@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Page Title</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- <link rel="stylesheet" type="text/css" href="./example2.css" >
+         -->
+    </head>
+
+    
+    <body>
+
+        <input id="btn1" type="button" value="Click ME">
+
+        <script>
+            //缺少 跨域請求 CORS ，全名為 Cross-Origin Resource Sharing，跨來源資源共享。
+            $("#btn1").click(function(){
+                // $.ajax({
+                // type: "post",
+                // dataType: 'json',
+                // data: {
+                // "method": "write",
+                // "name": "Wayne",
+                // "sex": "male",
+                // "remark": "測試寫入功能"
+                // },
+                // url: "https://script.google.com/macros/s/AKfycbwsFwKFelFZFwc-Razuen7zrk2vhoiDNIOpPpPLTN2hQUUIMP8Jvz54IIfGJQRxH9x24w/exec", // 填入網路應用程式網址
+                // success: function(){alert("新增資料成功！")},
+                // error: function(){alert("失敗！")}
+            
+                // });
+                // var data = $.getJSON("https://script.google.com/macros/s/AKfycbwsFwKFelFZFwc-Razuen7zrk2vhoiDNIOpPpPLTN2hQUUIMP8Jvz54IIfGJQRxH9x24w/exec",{
+
+                // "method": "write",
+                // "name": "Wayne",
+                // "sex": "male",
+                // "remark": "測試寫入功能"
+                // });
+
+
+
+                // fetch('https://script.google.com/macros/s/AKfycbwsFwKFelFZFwc-Razuen7zrk2vhoiDNIOpPpPLTN2hQUUIMP8Jvz54IIfGJQRxH9x24w/exec')
+                //     .then((respons) => {
+                //         return respons.json();
+                //     })
+                //     .then((respons) => {
+                //             console.log(respons);
+                //     })
+                //     .catch((error) => {
+                //             console.log(error);
+                //     })
+                fetch('https://script.google.com/macros/s/AKfycbwsFwKFelFZFwc-Razuen7zrk2vhoiDNIOpPpPLTN2hQUUIMP8Jvz54IIfGJQRxH9x24w/exec?url=test.html?$format=json')
+                    .then((respons) => {
+                        return respons.json();
+                    })
+                    .then((respons) => {
+                        console.log(respons);
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
+            });
+        </script>
+        
+        <style>
+                    
+        </style>
+    </body>
+</html>

@@ -51,24 +51,17 @@
                 //     .catch((error) => {
                 //             console.log(error);
                 //     })
-            callGoogleScript();
-            function callGoogleScript() {
-                var url = "https://script.google.com/macros/s/AKfycbwsFwKFelFZFwc-Razuen7zrk2vhoiDNIOpPpPLTN2hQUUIMP8Jvz54IIfGJQRxH9x24w/exec";
-                var name = "Amit Agarwal"
-                name = JSON.stringify(name);//轉成字串傳送
-                var request = jQuery.ajax({
-                crossDomain: true,
-                url: url,
-                type: "GET",
-                // type: "POST", //還是會以get傳遞
-                data:{
-                "name":name
-                },
-                jsonpCallback:'cbfn',
-                dataType: "jsonp"
-                });
-
-            }
+                fetch('https://script.google.com/macros/s/AKfycbwsFwKFelFZFwc-Razuen7zrk2vhoiDNIOpPpPLTN2hQUUIMP8Jvz54IIfGJQRxH9x24w/exec?url=test.html?$format=json')
+                    .then((respons) => {
+                        return respons.json();
+                    })
+                    .then((respons) => {
+                        console.log(respons);
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
+            });
             });
         </script>
         
